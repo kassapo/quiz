@@ -18,4 +18,4 @@ From it you can return to the first screen.
 
 The game does not keep score. All it does is pick a term.
 
-
+Play online at https://kassapo.github.io/quiz/
