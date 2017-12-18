@@ -3,11 +3,11 @@ texts.de = {
   fail: 'Aus und vorbei!',
   go: 'Los!',
   guessing: 'Fleissig raten!',
-  intro: 'Alle bis auf Einen wegschauen! Dann drücken Sie Weiter für einen ' +
-  'Begriff, den die Anderen raten sollen.',
+  intro: 'Alle bis auf Einen wegschauen! Dann drücken Sie Weiter ' +
+    'für einen Begriff, den die Anderen raten sollen.',
   next: 'Weiter',
-  prepare: 'Wenn Sie sich den Begriff gemerkt haben, drücken Sie Los und ' +
-  'die Zeit läuft!',
+  prepare: 'Wenn Sie sich den Begriff gemerkt haben, drücken Sie ' +
+    'Los und die Zeit läuft!',
   success: 'Geschafft!',
   title: 'Ratespiel'
 };
@@ -103,7 +103,7 @@ terms.de = [['Abgeordneter', 'Abgeordnete'],
   ['Hafenarbeiter', 'Hafenarbeiterin'],
   ['Hausfrau', 'Hausfrauin'],
   ['Hausmeister', 'Hausmeisterin'],
-  ['Hebamme', 'Hebammein'],
+  ['Hebamme'],
   ['Heilerziehungspfleger', 'Heilerziehungspflegerin'],
   ['Heiratsschwindler', 'Heiratsschwindlerin'],
   ['Herrenausstatter', 'Herrenausstatterin'],
