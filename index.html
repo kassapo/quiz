@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <title>Ratespiel</title>
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script type="application/javascript">
+      const language = 'de';
+      const indices = {};
+      const terms = {};
+      const texts = {};
+    </script>
+    <script src="./i18n.js"></script>
+    <script src="./quiz.js"></script>
   </head>
-  <body>
-    <h1 id="term" class="mdc-typography--display1">Ratespiel</h1>
-    <p id="description" class="mdc-dialog__body">
-      Wenn nur Sie schauen, drücken Sie Weiter für einen Begriff, den die Anderen raten sollen.
-    </p>
-    <button id='next' type="button" class="mdc-button mdc-button--raised"></button>
-  </body>
+  <body onload="setup()">Ohne JavaScript geht nix.</body>
 </html>
