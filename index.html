@@ -11,6 +11,7 @@
         font-weight: bold;
         padding: 0.274em 1em
       }
+      #sources { font-size: smaller; line-height: 3em }
     </style>
     <script type="application/javascript">
       const language = 'de';
@@ -83,6 +84,11 @@
         text = c('p', 'text', texts.de.intro);
         button = c('button', 'button', texts.de.next);
         button.onclick = next;
+        const a = document.body.appendChild(document.createElement('div'))
+                .appendChild(document.createElement('a'));
+        a.href = 'https://github.com/kassapo/quiz';
+        a.id = 'sources';
+        a.innerText = texts[language]['sources'];
       };
     </script>
   </head>

@@ -8,6 +8,7 @@ texts.de = {
   next: 'Weiter',
   prepare: 'Wenn Sie sich den Begriff gemerkt haben, drücken Sie ' +
     'Los und die Zeit läuft!',
+  sources: 'Quelltext',
   success: 'Geschafft!',
   title: 'Ratespiel'
 };
