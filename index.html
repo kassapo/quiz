@@ -30,6 +30,8 @@
       const sources = c('a');
       const text = c('p');
       const title = c('h1');
+      const oneMinute = 60;
+      const twoMinutes = 120;
     </script>
     <script src="./i18n.js"></script>
     <script type="application/javascript">
@@ -72,10 +74,10 @@
           : variants[0];
       };
       const setup = function () {
-        easy.onclick = () => go(60);
+        easy.onclick = () => go(oneMinute);
         easy.textContent = texts[language]['easy'];
         done.textContent = texts[language]['done'];
-        hard.onclick = () => go(120);
+        hard.onclick = () => go(twoMinutes);
         hard.textContent = texts[language]['hard'];
         next.onclick = function () {
           if (indices.length === 0) {

@@ -8,8 +8,8 @@ texts.de = {
   intro: 'Alle bis auf Einen wegschauen! Dann drücken Sie Weiter ' +
     'für einen Begriff, den die Anderen raten sollen.',
   next: 'Weiter',
-  prepare: 'Wenn Sie sich den Begriff gemerkt haben, drücken Sie ' +
-    'Leicht, oder Schwer und die Zeit läuft!',
+  prepare: 'Wenn Sie sich den Begriff gemerkt haben, drücken Sie Leicht, ' +
+    'oder Schwer und die Zeit läuft!',
   sources: 'Quelltext',
   success: 'Geschafft!',
   title: 'Ratespiel'
