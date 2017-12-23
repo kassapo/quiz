@@ -5,52 +5,62 @@
     <title>Ratespiel</title>
     <style type="text/css">
       body { margin: 1em }
-      #title { font-family: sans-serif }
-      #text { color: rgba(0,0,0,0.6) }
-      #button {
+      button {
         font-weight: bold;
-        padding: 0.274em 1em
+        padding:     0.274em 1em
       }
-      #sources { font-size: smaller; line-height: 3em }
+      h1 { font-family: sans-serif }
+      p { color: rgba(0, 0, 0, 0.6) }
+      #sources {
+        display: block;
+        font-size: smaller;
+        margin-top: 3em
+      }
     </style>
     <script type="application/javascript">
+      const c = function (t) {return document.createElement(t)};
       const language = 'de';
       const indices = {};
       const terms = {};
       const texts = {};
+      const easy = c('button');
+      const done = c('button');
+      const hard = c('button');
+      const next = c('button');
+      const sources = c('a');
+      const text = c('p');
+      const title = c('h1');
     </script>
     <script src="./i18n.js"></script>
     <script type="application/javascript">
       "use strict";
-      let button, text, title;
-      const go = function () {
-        let duration = 120;
+      const go = function (duration) {
         const t = function () {
           if (duration !== -1) {
             const m = (duration / 60) >> 0;
             const s = duration - m * 60;
             title.innerText = m + ':' + (s > 9 ? s : '0' + s);
             if (duration > 0) setTimeout(t, 1e3); else {
-              set(next, 'next', 'intro', 'fail');
+              text.innerText = texts[language]['intro'];
+              title.innerText = texts[language]['fail'];
+              document.body.removeChild(done);
+              document.body.insertBefore(next, sources);
             }
             duration -= 1;
           }
         };
-        button.onclick = function () {
+        done.onclick = function () {
           duration = -1;
-          set(next, 'next', 'intro', 'success');
+          text.innerText = texts[language]['intro'];
+          title.innerText = texts[language]['success'];
+          document.body.removeChild(done);
+          document.body.insertBefore(next, sources);
         };
-        button.innerText = texts[language]['done'];
         text.innerText = texts[language]['guessing'];
+        document.body.removeChild(hard);
+        document.body.removeChild(easy);
+        document.body.insertBefore(done, sources);
         t();
-      };
-      const next = function () {
-        if (indices.length == 0) {
-          indices.length = terms.length;
-          indices.fill().map((_, i) => indices[i] = i);
-        }
-        set(go, 'go', 'prepare');
-        title.innerText = pick();
       };
       const pick = function () {
         const random = function (length) {
@@ -58,39 +68,42 @@
         };
         const i = indices[language].splice(random(indices[language].length), 1);
         const variants = terms[language][i];
-        return variants.length > 0 ? variants[random(variants.length)] : variants[0];
-      };
-      const reset = function () {
-        button.onclick = next;
-        button.innerText = texts[language]['next'];
-        text.innerText = texts[language]['intro'];
-        title.innerText = texts[language]['title'];
-      };
-      const set = function (bc, bi, te, ti) {
-        button.onclick = bc;
-        button.innerText = texts[language][bi];
-        text.innerText = texts[language][te];
-        if (ti) title.innerText = texts[language][ti];
+        return variants.length > 0 ? variants[random(variants.length)]
+          : variants[0];
       };
       const setup = function () {
-        const c = function (n, id, t) {
-          const e = document.createElement(n);
-          e.id = id;
-          e.textContent = t;
-          return document.body.appendChild(e);
+        easy.onclick = () => go(60);
+        easy.textContent = texts[language]['easy'];
+        done.textContent = texts[language]['done'];
+        hard.onclick = () => go(120);
+        hard.textContent = texts[language]['hard'];
+        next.onclick = function () {
+          if (indices.length === 0) {
+            indices.length = terms.length;
+            indices.fill().map((_, i) => indices[i] = i);
+          }
+          title.textContent = pick();
+          text.textContent = texts[language]['prepare'];
+          document.body.removeChild(next);
+          document.body.insertBefore(easy, sources);
+          document.body.insertBefore(hard, sources);
         };
-        document.body.innerHTML = '';
-        title = c('h1', 'title', texts.de.title);
-        text = c('p', 'text', texts.de.intro);
-        button = c('button', 'button', texts.de.next);
-        button.onclick = next;
-        const a = document.body.appendChild(document.createElement('div'))
-                .appendChild(document.createElement('a'));
-        a.href = 'https://github.com/kassapo/quiz';
-        a.id = 'sources';
-        a.innerText = texts[language]['sources'];
+        next.textContent = texts[language]['next'];
+        sources.href = 'https://github.com/kassapo/quiz';
+        sources.id = 'sources';
+        sources.textContent = texts[language]['sources'];
+        text.textContent = texts[language]['intro'];
+        title.textContent = texts[language]['title'];
+        document.body.appendChild(title);
+        document.body.appendChild(text);
+        document.body.appendChild(next);
+        document.body.appendChild(sources);
       };
     </script>
   </head>
-  <body onload="setup()">Ohne JavaScript geht nix.</body>
+  <body onload="setup()">
+    <noscript>
+      Ohne JavaScript geht nix.
+    </noscript>
+  </body>
 </html>

@@ -8,6 +8,7 @@ Repeat.
 Everybody else should not look at the screen.
 
   * The second screen presents the term.
+The presenter chooses how much time to give the guessers.  
 
   * The third screen has the timer counting down.
 The counting can be interrupted if the term has been guessed.
