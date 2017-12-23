@@ -1,4 +1,4 @@
-texts.de = {
+texts['de'] = {
   done: 'Geraten!',
   easy: 'Leicht zu raten, eine Minute Zeit',
   fail: 'Aus und vorbei!',
@@ -14,7 +14,7 @@ texts.de = {
   success: 'Geschafft!',
   title: 'Ratespiel'
 };
-terms.de = [['Abgeordneter', 'Abgeordnete'],
+terms['de'] = [['Abgeordneter', 'Abgeordnete'],
   ['Abwassertechniker', 'Abwassertechnikerin'],
   ['Ajatollah'],
   ['Altenpflegehelfer', 'Altenpflegehelferin'],
@@ -104,7 +104,7 @@ terms.de = [['Abgeordneter', 'Abgeordnete'],
   ['Gynekologe', 'Gynekologin'],
   ['Gärtner', 'Gärtnerin'],
   ['Hafenarbeiter', 'Hafenarbeiterin'],
-  ['Hausfrau', 'Hausfrauin'],
+  ['Hausmann', 'Hausfrau'],
   ['Hausmeister', 'Hausmeisterin'],
   ['Hebamme'],
   ['Heilerziehungspfleger', 'Heilerziehungspflegerin'],
@@ -240,4 +240,5 @@ terms.de = [['Abgeordneter', 'Abgeordnete'],
   ['Zahnarzt', 'Zahnarztin'],
   ['Zimmermann']
 ];
-indices.de = terms.de.map((_, i) => i);
+
+indices['de'] = terms['de'].map((_, i) => i);

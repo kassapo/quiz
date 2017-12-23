@@ -19,95 +19,11 @@
       h1 { font-family: sans-serif }
       p { color: rgba(0, 0, 0, 0.6) }
     </style>
-    <script type="application/javascript">
-      const c = function (t) {return document.createElement(t)};
-      const language = 'de';
-      const indices = {};
-      const terms = {};
-      const texts = {};
-      const easy = c('button');
-      const done = c('button');
-      const hard = c('button');
-      const next = c('button');
-      const sources = c('a');
-      const text = c('p');
-      const title = c('h1');
-      const oneMinute = 60;
-      const twoMinutes = 120;
-    </script>
-    <script src="./i18n.js"></script>
-    <script type="application/javascript">
-      "use strict";
-      const go = function (duration) {
-        const t = function () {
-          if (duration !== -1) {
-            const m = (duration / 60) >> 0;
-            const s = duration - m * 60;
-            title.innerText = m + ':' + (s > 9 ? s : '0' + s);
-            if (duration > 0) setTimeout(t, 1e3); else {
-              text.innerText = texts[language]['intro'];
-              title.innerText = texts[language]['fail'];
-              document.body.removeChild(done);
-              document.body.insertBefore(next, sources);
-            }
-            duration -= 1;
-          }
-        };
-        done.onclick = function () {
-          duration = -1;
-          text.innerText = texts[language]['intro'];
-          title.innerText = texts[language]['success'];
-          document.body.removeChild(done);
-          document.body.insertBefore(next, sources);
-        };
-        text.innerText = texts[language]['guessing'];
-        document.body.removeChild(hard);
-        document.body.removeChild(easy);
-        document.body.insertBefore(done, sources);
-        t();
-      };
-      const pick = function () {
-        const random = function (length) {
-          return Math.floor(Math.random() * length);
-        };
-        const i = indices[language].splice(random(indices[language].length), 1);
-        const variants = terms[language][i];
-        return variants.length > 0 ? variants[random(variants.length)]
-          : variants[0];
-      };
-      const setup = function () {
-        easy.onclick = () => go(oneMinute);
-        easy.textContent = texts[language]['easy'];
-        done.textContent = texts[language]['done'];
-        hard.onclick = () => go(twoMinutes);
-        hard.textContent = texts[language]['hard'];
-        next.onclick = function () {
-          if (indices.length === 0) {
-            indices.length = terms.length;
-            indices.fill().map((_, i) => indices[i] = i);
-          }
-          title.textContent = pick();
-          text.textContent = texts[language]['prepare'];
-          document.body.removeChild(next);
-          document.body.insertBefore(easy, sources);
-          document.body.insertBefore(hard, sources);
-        };
-        next.textContent = texts[language]['next'];
-        sources.href = 'https://github.com/kassapo/quiz';
-        sources.id = 'sources';
-        sources.textContent = texts[language]['sources'];
-        text.textContent = texts[language]['intro'];
-        title.textContent = texts[language]['title'];
-        document.body.appendChild(title);
-        document.body.appendChild(text);
-        document.body.appendChild(next);
-        document.body.appendChild(sources);
-      };
-    </script>
   </head>
-  <body onload="setup()">
+  <body onload="window.setup()">
     <noscript>
       Ohne JavaScript geht nix.
     </noscript>
+    <script src="quiz.js"></script>
   </body>
 </html>

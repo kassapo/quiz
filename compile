@@ -1,0 +1,12 @@
+#!/bin/bash
+
+MODE=ADVANCED
+#MODE=SIMPLE
+
+closure-compiler -O $MODE -W VERBOSE \
+  --charset UTF-8 \
+  --dependency_mode NONE \
+  --language_in ECMASCRIPT_2017 \
+  --language_out ECMASCRIPT_2017 \
+  --js_output_file quiz.js \
+  globals.js i18n.js main.js
