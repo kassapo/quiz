@@ -20,3 +20,9 @@ From it you can return to the first screen.
 The game does not keep score. All it does is pick a term.
 
 Play online at https://kassapo.github.io/quiz/
+
+## Google Closure Compiler
+
+```
+$ brew install closure-compiler
+/usr/local/Cellar/closure-compiler/20171203: 4 files, 7.2MB, built in 7 seconds
