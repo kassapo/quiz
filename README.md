@@ -19,10 +19,34 @@ From it you can return to the first screen.
 
 The game does not keep score. All it does is pick a term.
 
-Play online at https://kassapo.github.io/quiz/
+Play online at <https://kassapo.github.io/quiz/>
 
 ## Google Closure Compiler
 
 ```
 $ brew install closure-compiler
-/usr/local/Cellar/closure-compiler/20171203: 4 files, 7.2MB, built in 7 seconds
+```
+
+Use compile script to generate `quiz.js` from `globals.js`, `i18n.js` and
+ `main.js`.
+
+## License
+
+Copyright © 2017 Ulrich Becker, ub@kassapo.com
+
+This file is part of Ratespiel.
+
+Ratespiel is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Ratespiel is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with Ratespiel.  If not, see <http://www.gnu.org/licenses/>.
+
+The source code is available at https://kassapo.github.com/quiz
