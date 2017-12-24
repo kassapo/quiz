@@ -1,16 +1,25 @@
 "use strict";
 
-function append(e) {
-  return document.body.appendChild(e);
-}
+/*
+ Copyright © 2017 Ulrich Becker, ub@kassapo.com
 
-function insert(e) {
-  return document.body.insertBefore(e, sources);
-}
+ This file is part of Ratespiel.
 
-function remove(e) {
-  document.body.removeChild(e);
-}
+ Ratespiel is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ Ratespiel is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with Ratespiel.  If not, see <http://www.gnu.org/licenses/>.
+
+ The source code is available at https://kassapo.github.com/quiz
+ */
 
 const go = function (duration) {
   const t = function () {
@@ -18,7 +27,9 @@ const go = function (duration) {
       const m = (duration / 60) >> 0;
       const s = duration - m * 60;
       title.textContent = m + ':' + (s > 9 ? s : '0' + s);
-      if (duration > 0) setTimeout(t, 1e3); else {
+      if (duration > 0) {
+        setTimeout(t, 1e3);
+      } else {
         text.textContent = texts[language].intro;
         title.textContent = texts[language].fail;
         remove(done);
@@ -52,6 +63,9 @@ const pick = function () {
 };
 
 const setup = function () {
+  const a = create('a');
+  a.href = 'https://github.com/kassapo/quiz';
+  a.textContent = texts[language].sources;
   easy.onclick = () => go(oneMinute);
   easy.textContent = texts[language].easy;
   done.textContent = texts[language].done;
@@ -69,9 +83,7 @@ const setup = function () {
     insert(hard);
   };
   next.textContent = texts[language].next;
-  sources.href = 'https://github.com/kassapo/quiz';
-  sources.id = 'sources';
-  sources.textContent = texts[language].sources;
+  sources.appendChild(a);
   text.textContent = texts[language].intro;
   title.textContent = texts[language].title;
   append(title);
@@ -80,4 +92,4 @@ const setup = function () {
   append(sources);
 };
 
-window['setup'] = setup;
+window['setup'] = setup; /* export, called from body.onload */
