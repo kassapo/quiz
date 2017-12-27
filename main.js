@@ -57,8 +57,9 @@ const pick = function () {
     return Math.floor(Math.random() * length);
   };
   const i = indices[language].splice(random(indices[language].length), 1);
-  const variants = terms[language][i];
-  return variants.length > 0 ? variants[random(variants.length)]
+  const variants = terms[language][i].split("|");
+  return variants.length > 1
+    ? variants[0] + variants[1 + random(variants.length - 1)]
     : variants[0];
 };
 

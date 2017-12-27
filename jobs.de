@@ -88,7 +88,7 @@
 ['Gynekologe','Gynekologin'],
 ['Gärtner','Gärtnerin'],
 ['Hafenarbeiter','Hafenarbeiterin'],
-['Hausmann', 'Hausfrau'],
+['Hausmann','Hausfrau'],
 ['Hausmeister','Hausmeisterin'],
 ['Hebamme'],
 ['Heilerziehungspfleger','Heilerziehungspflegerin'],
@@ -208,6 +208,7 @@
 ['Tankwart','Tankwärtin'],
 ['Tierpfleger','Tierpflegerin'],
 ['Tischler','Tischlerin'],
+['Torwart','Torfrau'],
 ['Totengräber','Totengräberin'],
 ['Tourismuskaufmann','Tourismuskauffrau'],
 ['Transvestit','Transvestitin'],
@@ -221,5 +222,5 @@
 ['Wachmann'],
 ['Werkstoffprüfer','Werkstoffprüferin'],
 ['Winzer','Winzerin'],
-['Zahnarzt','Zahnarztin'],
+['Zahnarzt','Zahnärztin'],
 ['Zimmermann']]
