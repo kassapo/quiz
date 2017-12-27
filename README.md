@@ -1,7 +1,7 @@
 # Guessing game
 
 One out of a group of players is given a random term to present to the others.
-The others may attempt to guess the term within two minutes.
+The others may attempt to guess the term within one, or two minutes.
 Repeat.
 
   * The first screen asks the group to pick one of their members.
@@ -17,7 +17,8 @@ The game will return to the first screen.
   * The fourth screen appears when the count down runs out.
 From it you can return to the first screen.
 
-The game does not keep score. All it does is pick a term.
+The game does not keep score.
+All it does is pick a term and run the timer.
 
 Play online at <https://kassapo.github.io/quiz/>
 
@@ -27,8 +28,8 @@ Play online at <https://kassapo.github.io/quiz/>
 $ brew install closure-compiler
 ```
 
-Use compile script to generate `quiz.js` from `globals.js`, `i18n.js` and
- `main.js`.
+Use `compile` script to generate `quiz.js` from `globals.js`, `i18n.js` and
+`main.js`.
 
 ## License
 
