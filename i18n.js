@@ -58,7 +58,7 @@ terms['de']['jobs'] = [
   'Baby',
   'Bademeister||in',
   'Baggerführer||in',
-  'Bankier||in',
+  'B|ankier|änkerin',
   'Bankkauf|mann|frau',
   'Bauarbeiter||in',
   'B|auer|äuerin',
