@@ -1,4 +1,4 @@
-# QUiz
+# Quiz
 
 Play online at <https://kassapo.github.io/quiz/>
 
